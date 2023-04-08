@@ -82,6 +82,19 @@ const CountryList = () => {
             : null
         ))    
         :null} 
+        { countries 
+            ? countries.map((country,index) => (
+                search === country.capital ?
+                <div key={index}>
+                <Country country={country} /> 
+            </div>
+            : null
+
+            ))
+            
+            
+            : null
+        }
 
     </div>
   )
