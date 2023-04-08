@@ -1,12 +1,17 @@
 import './App.css';
 import Main from './pages/Main/Main';
 import NavBar from './components/NavBar/NavBar';
+import {CountryContextProvider} from "./contexts/CountriesContext"
 
 function App() {
   return (
     <div >
       <NavBar />
-      < Main />
+      <CountryContextProvider>
+        <div>
+          < Main />
+        </div>
+      </CountryContextProvider>
     </div>
   );
 }

@@ -1,24 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import Country from '../Country/Country'
 import SearchBar from './../SearchBar/SearchBar';
+import CountryContext from "../../contexts/CountriesContext"
 
 const CountryList = () => {
-    const [countries, setCountries] = useState([])
+    
     const [select, setSelect] = useState("")
     const [search, setSearch] = useState("")
 
-    // const getCountries = () => {
-    //     axios 
-    //         .get(`https://restcountries.com/v2/all`)
-    //         .then((response) => setCountries(response.data)) 
-    //             // console.log(response.data))
-       
-    // }
-
-    // useEffect(() => {
-    //     getCountries()
-    // }, [])
+    const {countries, setCountries} = useContext(CountryContext)
 
 
     const selectCountry = () => {

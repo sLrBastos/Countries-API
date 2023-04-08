@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import CountryList from '../../components/CountryList/CountryList'
 
 const CountryDetails = () => {
-    const {name} = useParams() 
+    const {name, alpha3Code} = useParams() 
     const [country, setCountry] = useState()
 
     const getCountry = () => {
@@ -21,6 +21,20 @@ const CountryDetails = () => {
     useEffect(() => {
         getCountry()
     }, [])
+
+    // const getCountryAlpha = () => {
+    //     axios
+    //         .get(`https://restcountries.com/v2/all/${alpha3Code}`)
+    //         .then((response) => {
+    //             setCountry(response.data[0])
+    //             // console.log(response.data[0])
+    //         })
+    // }
+
+    // useEffect(() => {
+    //     getCountryAlpha()
+    // }, [])
+
 
   return (
     <div>CountryDetails
