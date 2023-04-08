@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import CountryList from '../../components/CountryList/CountryList'
 
 const CountryDetails = () => {
     const {name} = useParams() 
@@ -23,9 +24,12 @@ const CountryDetails = () => {
 
   return (
     <div>CountryDetails
-        { country ? (
+        { 
+        country ? (
             <div>
-                {/* {console.log(country.borders.map((border, index) => <div> {border}</div>))} */}
+                <Link to="/country-list" element={<CountryList />}>
+                <button >Previous</button>
+                </Link>
                 <img src={country.flag} alt={country.name} />
                 <ul>
                 <li>Name: {country.name}</li>
@@ -33,7 +37,7 @@ const CountryDetails = () => {
                 <li>Region: {country.region}</li>
                 <li>Population: {country.population}</li>
                 <li>Area(Km): {country.area} </li>
-                <li>Borders:  {country.borders.map((border) => <Link to={`/countries/${country.name}`}><div> {border}</div></Link>)}</li>
+                <li>Borders:  {Array.isArray(country.borders) && country.borders.length ? country.borders.map((border) => <Link to={`/countries/${border}`}><div> {border}</div></Link>): null}</li>
                 <li>Currencies: {country.currencies.map(currency => <div>{currency.name} ({currency.symbol})</div>)}</li>
                 <li>Languages: {country.languages.map(language => <div>{language.name} </div>)}</li>
                 </ul>

@@ -9,6 +9,7 @@ const Main = () => {
         <Routes>
             <Route path="/country-list" element={<CountryList />}/>
             <Route path="/countries/:name" element={<CountryDetails />}/>
+            <Route path="/countries/:border" element={<CountryDetails />}/>
         </Routes>
     </div>
   )
