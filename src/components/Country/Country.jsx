@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Country = ({country}) => {
 
-  const {name, flag, capital, region, population, area, borders,currencies,languages} = country
+  const {alpha3Code, name, flag, capital, region, population, area, borders,currencies,languages} = country
 
   return (
     <div>Country

@@ -51,8 +51,8 @@ const CountryDetails = () => {
                 <li>Region: {country.region}</li>
                 <li>Population: {country.population}</li>
                 <li>Area(Km): {country.area} </li>
-                <li>Borders:  {Array.isArray(country.borders) && country.borders.length ? country.borders.map((border) => <Link to={`/countries/${border}`}><div> {border}</div></Link>): null}</li>
-                <li>Currencies: {country.currencies.map(currency => <div>{currency.name} ({currency.symbol})</div>)}</li>
+                <li>Borders:  {Array.isArray(country.borders) && country.borders.length ? country.borders.map((border) => <Link to={`/countries/${border}` } element={country.alpha3Code}><div> {border}</div></Link>): null}</li>
+                <li>Currencies: {Array.isArray(country.currencies)  && country.currencies.length ? country.currencies.map(currency => <div>{currency.name} ({currency.symbol})</div>):null}</li>
                 <li>Languages: {country.languages.map(language => <div>{language.name} </div>)}</li>
                 </ul>
             </div>
